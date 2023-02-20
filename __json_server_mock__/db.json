@@ -1,3 +1,62 @@
 {
-  "user": []
+  "users": [
+    {
+      "id": 1,
+      "name": "Ara"
+    },
+    {
+      "id": 2,
+      "name": "Karnig"
+    },
+    {
+      "id": 3,
+      "name": "Raffi"
+    },
+    {
+      "id": 4,
+      "name": "Jatinder"
+    },
+    {
+      "id": 5,
+      "name": "Kumar"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Business",
+      "personId": 1,
+      "organization": "management",
+      "created": 1604989757139
+    },
+    {
+      "id": 2,
+      "name": "Engineering",
+      "personId": 2,
+      "organization": "management",
+      "created": 1604989757139
+    },
+    {
+      "id": 3,
+      "name": "Maintainance",
+      "personId": 3,
+      "organization": "Maintainance",
+      "created": 1546300800000
+    },
+    {
+      "id": 4,
+      "name": "Painting",
+      "personId": 4,
+      "organization": "production",
+      "created": 1604980000011
+    },
+    {
+      "id": 5,
+      "name": "Production",
+      "personId": 5,
+      "organization": "production",
+      "created": 1604980000011
+    }
+  
+  ]
 }
