@@ -15,9 +15,11 @@ export interface Project {
 export interface User {
   id: string;
   name: string;
+  token: string;
 }
 
 const apiURL = process.env.REACT_APP_API_URL;
+
 function ProjectList() {
   const [param, setParam] = useState({
     name: "",
