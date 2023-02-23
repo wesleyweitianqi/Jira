@@ -3,6 +3,7 @@ import SearchPanel from "./SearchPanel";
 import List from "./List";
 import * as qs from "qs";
 import { cleanObject, useDebounce, useMount } from "utils";
+import { useHttp } from "utils/http";
 
 export interface Project {
   id: string;
@@ -28,20 +29,16 @@ function ProjectList() {
 
   const [users, setUsers] = useState([]);
   const [projects, setProjects] = useState([]);
+  const [list, setList] = useState([]);
 
   const debouncedParam = useDebounce(param, 200);
+  const client = useHttp();
   useEffect(() => {
-    fetch(
-      `${apiURL}/projects?${qs.stringify(cleanObject(debouncedParam))}`
-    ).then(async (res) => {
-      if (res.ok) setProjects(await res.json());
-    });
+    client("projects", { data: cleanObject(debouncedParam) }).then(setList);
   }, [debouncedParam]);
 
   useMount(() => {
-    fetch(`${apiURL}/users`).then(async (res) => {
-      if (res.ok) setUsers(await res.json());
-    });
+    client("users").then(setUsers);
   });
 
   return (
